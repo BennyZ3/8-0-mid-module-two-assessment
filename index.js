@@ -174,10 +174,11 @@ function getRottenTomatoesScoreByMovie(movies) {
     throw 'inputted `movies` array is empty'
   }
   return movies.map(movie => {
-    let newArr = {}
-    newArr[movie.title] = movie.ratings.find(rating => rating.source=== 'Rotten Tomatoes').value
-    return newArr
+    return {[movie.title]:movie.ratings.find(rating => rating.source=== 'Rotten Tomatoes').value}
   })
+  // let newArr = {}
+  // newArr[movie.title] = movie.ratings.find(rating => rating.source=== 'Rotten Tomatoes').value
+  // return newArr
 }
 
 // Do not change anything below this line.
